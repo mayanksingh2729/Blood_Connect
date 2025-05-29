@@ -10,7 +10,6 @@ function AuthContextProvider(props) {
   async function getLoggedIn() {
     try {
       const loggedInRes = await axios.get(`${process.env.REACT_APP_API_URL}/auth/loggedIn`, { withCredentials: true });
-      console.log(loggedInRes.data,"============"); // Log the response data for debugging
       setLoggedIn(loggedInRes.data.auth);
       setUser(loggedInRes.data.user);
     } catch (error) {
